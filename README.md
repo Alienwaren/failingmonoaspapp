@@ -1,40 +1,12 @@
-# Welcome to ASP.NET 5
+This is failing ASP.NET 5 app, which hangs at accepting a client on Linux.
 
-We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.
+Runtime: `(Stable 4.2.2.30/996df3c Fri Jan 22 00:02:19 UTC 2016)`
+Linux: Debian 8 Jessie
+Kernel: `Linux netrunnerdevelopment 3.16.0-4-amd64 #1 SMP Debian 3.16.7-ckt20-1+deb8u3 (2016-01-17) x86_64 GNU/Linux`
 
-You've created a new ASP.NET 5 project. [Learn what's new](http://go.microsoft.com/fwlink/?LinkId=518016)
+Steps to reproduce problem:
 
-## This application consists of:
-
-*   Sample pages using ASP.NET MVC 6
-*   [Gulp](http://go.microsoft.com/fwlink/?LinkId=518007) and [Bower](http://go.microsoft.com/fwlink/?LinkId=518004) for managing client-side libraries
-*   Theming using [Bootstrap](http://go.microsoft.com/fwlink/?LinkID=398939)
-
-## How to
-
-*   [Add a Controller and View](http://go.microsoft.com/fwlink/?LinkID=398600)
-*   [Add an appsetting in config and access it in app.](http://go.microsoft.com/fwlink/?LinkID=699562)
-*   [Manage User Secrets using Secret Manager.](http://go.microsoft.com/fwlink/?LinkId=699315)
-*   [Use logging to log a message.](http://go.microsoft.com/fwlink/?LinkId=699316)
-*   [Add packages using NuGet.](http://go.microsoft.com/fwlink/?LinkId=699317)
-*   [Add client packages using Bower.](http://go.microsoft.com/fwlink/?LinkId=699318)
-*   [Target development, staging or production environment.](http://go.microsoft.com/fwlink/?LinkId=699319)
-
-## Overview
-
-*   [Conceptual overview of what is ASP.NET 5](http://go.microsoft.com/fwlink/?LinkId=518008)
-*   [Fundamentals of ASP.NET 5 such as Startup and middleware.](http://go.microsoft.com/fwlink/?LinkId=699320)
-*   [Working with Data](http://go.microsoft.com/fwlink/?LinkId=398602)
-*   [Security](http://go.microsoft.com/fwlink/?LinkId=398603)
-*   [Client side development](http://go.microsoft.com/fwlink/?LinkID=699321)
-*   [Develop on different platforms](http://go.microsoft.com/fwlink/?LinkID=699322)
-*   [Read more on the documentation site](http://go.microsoft.com/fwlink/?LinkID=699323)
-
-## Run & Deploy
-
-*   [Run your app](http://go.microsoft.com/fwlink/?LinkID=517851)
-*   [Run your app on .NET Core](http://go.microsoft.com/fwlink/?LinkID=517852)
-*   [Run commands in your project.json](http://go.microsoft.com/fwlink/?LinkID=517853)
-*   [Publish to Microsoft Azure Web Apps](http://go.microsoft.com/fwlink/?LinkID=398609)
-
-We would love to hear your [feedback](http://go.microsoft.com/fwlink/?LinkId=518015)
+1. Use `yo` to scaffold web app.
+2. Run `dnu restore && dnu build` to resolve dependencies and build app
+3. Run `dnx web` to start app.
+4. Open any web browser and go to `http://localhost:5000`.x
